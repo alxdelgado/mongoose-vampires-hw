@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+  <h1>Vampire Index Page</h1>
+  <ul>
+    <% for (let i = 0; i < vampire.length; i++) {%>
+      <li>
+        The <a href="/vampire/<%= i %>"><%= vampire[i].name %></a> is <%= vampire[i].color%>
+        <form method="POST" action="/vampire/<%= vampire[i].id%>?_method=DELETE">
+          <input type="submit" value="DELETE">
+        </form>
+        <a href="/vampire/<%= vampire[i].id%>/edit">Edit</a>
+      </li>
+      <% } %>
+      <a href="/vampire/new">New Vampire</a>
+  </ul>
+</body>
+</html>
